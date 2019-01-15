@@ -18,12 +18,16 @@ function objToSql(ob) {
   for (let key in ob) {
     let value = ob[key];
 
-    if (Object.hasOWnproperty.call(ob, key)) {
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
-        value = "'" + value + "'";
-      }
-      arr.push(key + "=" + value);
+    for (var key in ob) {
+      arr.push(key + "=" + ob[key]);
     }
+
+    // if (Object.hasOWnproperty.call(ob, key)) {
+    //   if (typeof value === "string" && value.indexOf(" ") >= 0) {
+    //     value = "'" + value + "'";
+    //   }
+    //   arr.push(key + "=" + value);
+    // }
   }
 
   return arr.toString();
