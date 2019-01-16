@@ -34,19 +34,5 @@ router.put("/burger/:id", function (req, res) {
 
 });
 
-// let condition = "id = " + req.params.id;
-
-// console.log("condition", condition);
-
-// burger.update({
-//     devoured: req.body.devoured
-// }, condition, function (burger_data) {
-//     res.redirect('/');
-//     console.log(burger_data);
-// });
-
-
-
-
 //Exports routes for server.js
 module.exports = router;
