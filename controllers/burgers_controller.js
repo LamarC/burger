@@ -4,7 +4,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const burger = ("../models.burger.js");
+const burger = require("../models/burger");
 
 router.get("/", function (req, res) {
     res.redirect("/burgers");
@@ -28,22 +28,24 @@ router.post("/burgers/create", function (req, res) {
 });
 
 router.put("/burger/:id", function (req, res) {
-    burger.update(req.params.id, function(result) {
+    burger.update(req.params.id, function (result) {
         res.sendStatus(200);
     });
 
-    // let condition = "id = " + req.params.id;
-
-    // console.log("condition", condition);
-
-    // burger.update({
-    //     devoured: req.body.devoured
-    // }, condition, function (burger_data) {
-    //     res.redirect('/');
-    //     console.log(burger_data);
-    // });
-
 });
+
+// let condition = "id = " + req.params.id;
+
+// console.log("condition", condition);
+
+// burger.update({
+//     devoured: req.body.devoured
+// }, condition, function (burger_data) {
+//     res.redirect('/');
+//     console.log(burger_data);
+// });
+
+
 
 
 //Exports routes for server.js
