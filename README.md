@@ -1,5 +1,6 @@
-# burger
+# Burger
 
 ##Technologies used
-* MySQL
-* Handlebars
+
+- MySQL
+- Handlebars

@@ -1,5 +1,5 @@
 //Import MySQL connection
-const connection = require("./connection");
+const connection = require("../config/connection");
 
 function printQuestionMarks(num) {
   let arr = [];
@@ -33,7 +33,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-const orm = {
+let orm = {
   all: function(tableInput, cb) {
     let queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
